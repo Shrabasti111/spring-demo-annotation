@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.demo.BeanLifeCycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +18,13 @@ public class MovieConfig {
     @Autowired
     @Qualifier("actor") //by name
     public Actor actorBean() {
-        return new Actor("Matt Bomer","male",40);
+        return new Actor("Matt Bomer","male",22);
     }
 
     @Autowired
     @Qualifier("Actor") //by type
     public Actor actorBean1() {
-        return new Actor("Leslie Knope","female",42);
+        return new Actor("Ron Swanson","male",42);
     }
 
 
@@ -42,5 +43,9 @@ public class MovieConfig {
         return new BeanLifeCycleDemoBean();
     }
 
+    @Bean
+    public BeanPostProcessorDemoBean getBean(){
+        return new BeanPostProcessorDemoBean();
+    }
 
 }
