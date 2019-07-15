@@ -22,7 +22,7 @@ public class MovieConfig {
     @Autowired
     @Qualifier("Actor") //by type
     public Actor actorBean1() {
-        return new Actor("Wentworth Miller","male",42);
+        return new Actor("Went Miller","male",42);
     }
 
 
